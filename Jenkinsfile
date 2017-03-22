@@ -17,7 +17,7 @@ pipeline {
         stage('promote') {
             steps {
                 unstash 'build'
-                archiveArtifacts artifacts: 'build/**/*.war', fingerprint: true, onlineIfSuccessful: true
+                archiveArtifacts artifacts: 'build/**/*.war', fingerprint: true, onlyIfSuccessful: true
             }
         }
     }
